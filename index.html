@@ -98,8 +98,41 @@
       if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
         await liff.sendMessages([
           {
-            "type": "text",
-          "text": "This message was sent by ShareTargetPicker"
+            "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "uri",
+          "label": "Primary style button",
+          "uri": "https://developers.line.me"
+        }
+      },
+      {
+        "type": "button",
+        "style": "secondary",
+        "action": {
+          "type": "uri",
+          "label": "Secondary style button",
+          "uri": "https://developers.line.me"
+        }
+      },
+      {
+        "type": "button",
+        "style": "link",
+        "action": {
+          "type": "uri",
+          "label": "Link style button",
+          "uri": "https://developers.line.me"
+        }
+      }
+    ]
+  }
           }
         ])
         // alert("Message sent")
