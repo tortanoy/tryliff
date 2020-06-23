@@ -98,21 +98,8 @@
       if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
         await liff.sendMessages([
           {
-            "type": "bubble", // ①
-  "body": { // ②
-    "type": "box", // ③
-    "layout": "horizontal", // ④
-    "contents": [ // ⑤
-      {
-        "type": "text", // ⑥
-        "text": "Hello,"
-      },
-      {
-        "type": "text", // ⑥
-        "text": "World!"
-      }
-    ]
-  }
+            "type": "text",
+          "text": "This message was sent by ShareTargetPicker"
           }
         ])
         // alert("Message sent")
