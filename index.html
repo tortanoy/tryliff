@@ -98,9 +98,21 @@
       if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
         await liff.sendMessages([
           {
-            "type": "sticker",
-            "stickerId": 1,
-            "packageId": 1
+            "type": "bubble", // ①
+  "body": { // ②
+    "type": "box", // ③
+    "layout": "horizontal", // ④
+    "contents": [ // ⑤
+      {
+        "type": "text", // ⑥
+        "text": "Hello,"
+      },
+      {
+        "type": "text", // ⑥
+        "text": "World!"
+      }
+    ]
+  }
           }
         ])
         alert("Message sent")
