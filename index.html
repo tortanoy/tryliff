@@ -30,7 +30,7 @@
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-  <button id="btnMsg2" onclick="sendBubble()">Send Bubble</button>
+  <button id="btnMsg2" onclick="sendFlex()">Send Flex Message</button>
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
@@ -109,44 +109,28 @@
       
     }
 
-    async function sendBubble() {
+    async function sendFlex() {
       
-        await liff.sendBubble([
+        await liff.sendMessages([
         {
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "md",
-    "contents": [
-      {
-        "type": "button",
-        "style": "primary",
-        "action": {
-          "type": "uri",
-          "label": "Primary style button",
-          "uri": "https://developers.line.me"
+  "type": "flex",
+  "altText": "this is a flex message",
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "hello"
+        },
+        {
+          "type": "text",
+          "text": "world"
         }
-      },
-      {
-        "type": "button",
-        "style": "secondary",
-        "action": {
-          "type": "uri",
-          "label": "Secondary style button",
-          "uri": "https://developers.line.me"
-        }
-      },
-      {
-        "type": "button",
-        "style": "link",
-        "action": {
-          "type": "uri",
-          "label": "Link style button",
-          "uri": "https://developers.line.me"
-        }
-      }
-    ]
+      ]
+    }
   }
 }
         ])
