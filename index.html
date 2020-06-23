@@ -30,6 +30,7 @@
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
+  <button id="btnMsg2" onclick="sendBubble()">Send Message</button>
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
@@ -98,7 +99,21 @@
       if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
         await liff.sendMessages([
           {
-            "type": "bubble",
+            "type": "sticker",
+            "stickerId": 1,
+            "packageId": 1
+          }
+        ])
+        alert("Message sent")
+      }
+      
+    }
+
+    async function sendBubble() {
+      
+        await liff.sendBubble([
+        {
+  "type": "bubble",
   "body": {
     "type": "box",
     "layout": "vertical",
@@ -133,10 +148,10 @@
       }
     ]
   }
-          }
+}
         ])
-        // alert("Message sent")
-      }
+        alert("Message sent")
+      
       
     }
 
